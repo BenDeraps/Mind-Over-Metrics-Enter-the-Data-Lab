@@ -1,165 +1,73 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mind Over Metrics — Enter the Data Lab</title>
+const header = {
+ homepage: "https://porfolio.simbl.dev",
+ title: "JS.",
+};
 
-  <!-- Google Fonts (clean, professional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+const about = {
+ name: "Benjamin DeRaps",
+ role: "Data Analyst",
+ description:
+  "Specializing in React, Next.js, Vue.js, and NestJS, I specialize in turning raw data into strategic decisions through clear analysis, intuitive dashboards, and real-world business context.",
+ resume: "/api/resume",
+ social: {
+  linkedin: "https://www.linkedin.com/in/benjaminderaps",
+  github: "https://github.com/BenDeraps",
+  email: "ben.c.deraps@gmail.com",
+ },
+};
 
-  <style>
-    :root{
-      --bg-overlay: rgba(0,0,0,.55);
-      --text: #ffffff;
-      --muted: #cfd8dc;
-      --accent: #00e5ff;
-      --card: #0f172a; /* slate-900 */
-      --card-border: #23314d;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:#0b1020;
-      line-height:1.5;
-    }
+const projects = [
+ {
+  name: "Zomato Customer Segment Analysis",
+  year: "2025",
+  description:
+   "Analyzed customer demographics and restaurant performance using Excel and Tableau to identify high-value customer segments and built dashboards to visualize behavior across multiple filters
+",
+  stack: ["Excel", "Tableau"],
+  liveUrl: "https://public.tableau.com/views/ZomatosCustomerSegmentationAnalysis/SalesbyIncomeEducation?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+ },
+ {
+  name: "NYC Airbnb Revenue Analysis",
+  year: "2025",
+  description:
+   "Analyzed Manhattan Airbnb listings using Excel pivot tables and data visualization to identify topperforming neighborhoods and property types, projecting revenue potential exceeding $350K anually for high-demand listings. Delivered strategic recomendations for optimizing vacation rental investments in high-revenue markets",
+  stack: ["Excel"],
+  liveUrl: "https://docs.google.com/spreadsheets/d/1D0biCmo5TYe00wDNYJTio44n-6-x-fQxeUDynDXGd6w/edit?usp=sharing",
+ },
+ {
+  name: "Superstore Profit Optimization Dashboard",
+  year: "2025",
+  description:
+   "Developed a comprehensive Tableau dashboard analyzing sales, returns, and advertising ROI to identify profit drivers and reduce return losses, providing data-driven recommendations for product discontinuation and targeted advertising strategies. Created interactive visualizations with color-coded performance metrics for executive stakeholder presentations",
+  stack: ["Tableau"],
+  liveUrl: "https://public.tableau.com/views/SuperStoreReturnRateAnalysisDashboardandStory/Story1FinalRecommendations?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+  videoUrl:"https://youtu.be/W40R64_vHiM"
+ },
+];
 
-    /* HERO */
-    .hero{
-      min-height:100vh;
-      position:relative;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:4rem 1.25rem;
-      background:
-        linear-gradient(var(--bg-overlay), var(--bg-overlay)),
-        url("https://cdn.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg")
-        center/cover no-repeat fixed;
-    }
-    .brand{
-      max-width:1000px;
-    }
-    .brand h1{
-      font-family:Poppins, Inter, sans-serif;
-      font-weight:800;
-      font-size:clamp(2rem, 6vw, 4rem);
-      letter-spacing:.02em;
-      margin:0 0 .35rem 0;
-    }
-    .brand .subtitle{
-      font-family:Poppins, Inter, sans-serif;
-      font-weight:600;
-      font-size:clamp(1rem, 2.5vw, 1.35rem);
-      color:var(--muted);
-      margin:0 0 1.25rem 0;
-    }
-    .cta{
-      display:inline-block;
-      padding:.9rem 1.2rem;
-      border:1px solid var(--accent);
-      color:var(--text);
-      text-decoration:none;
-      border-radius:.6rem;
-      font-weight:600;
-      backdrop-filter:saturate(140%) blur(2px);
-    }
-    .cta:hover{ background:rgba(0,229,255,.12); }
+const skills = [
+ "Excel",
+ "Power Query",
+ "SQL",
+ "Tableau",
+ "Power BI",
+ "Data Visualization",
+ "Data Cleaning",
+ "Python"
+];
 
-    /* CONTENT SECTIONS */
-    .wrap{ max-width:1100px; margin:0 auto; padding:3rem 1.25rem 4rem; }
-    .section-title{
-      font-family:Poppins, Inter, sans-serif;
-      font-weight:800;
-      font-size:clamp(1.4rem, 3vw, 2rem);
-      margin:0 0 1rem 0;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:1rem;
-    }
-    .card{
-      background:linear-gradient(180deg, #0f172a, #0b1226);
-      border:1px solid var(--card-border);
-      border-radius:14px;
-      padding:1rem 1.1rem;
-    }
-    .card h3{
-      margin:.2rem 0 .5rem;
-      font-family:Poppins, Inter, sans-serif;
-      font-weight:600;
-    }
-    .card p{ color:var(--muted); margin:.25rem 0 .75rem; }
-    .small{
-      font-size:.92rem;
-      color:var(--muted);
-    }
-    .link{ color:var(--accent); text-decoration:none; }
-    .link:hover{ text-decoration:underline; }
+const education = [
+ {
+  name: "Triple Ten Business Inteligence Analytics Bootcamp",
+  details: " Completed a rigorous data analytics program focused on SQL, excel, tableau, power BI, Python, and data storytelling through real-world projects"
+   { date: "2024 - 2025", }
+];
 
-    footer{
-      border-top:1px solid #1f2a44;
-      color:#9fb3c8;
-      padding:2rem 1.25rem 3rem;
-      text-align:center;
-    }
-  </style>
-</head>
-<body> 
-
-    <!-- HERO -->
-  <header class="hero">
-    <div class="brand">
-      <h1>Mind Over Metrics</h1>
-      <div class="subtitle">Benjamin DeRaps — Enter the Data Lab</div>
-      <a class="cta" href="#projects">Explore Projects</a>
-    </div>
-  </header>
-
-  <!-- PROJECTS -->
-  <main id="projects" class="wrap">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="grid">
-      <!-- Project card 1 -->
-      <article class="card">
-        <h3>Superstore Return Rate Analysis</h3>
-        <p>Why are returns so high? SQL + Tableau deep-dive with actionable recommendations.</p>
-        <p class="small">
-          <a class="link" href="https://github.com/BenDeraps/Data_projects_TripleTen/tree/main/1_Superstore_Return_Rate" target="_blank">View repo</a>
-          &nbsp;•&nbsp;
-          <a class="link" href="#" target="_blank">Live dashboard (Tableau/Public)</a>
-        </p>
-      </article>
-
-      <!-- Placeholder cards (replace as you add more) -->
-      <article class="card">
-        <h3>Project Two</h3>
-        <p>Short summary of the problem, tools, and results.</p>
-        <p class="small"><a class="link" href="#" target="_blank">View repo</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Project Three</h3>
-        <p>Short summary of the problem, tools, and results.</p>
-        <p class="small"><a class="link" href="#" target="_blank">View repo</a></p>
-      </article>
-    </div>
-  </main>
-
-  <footer>
-    © <span id="y"></span> Benjamin DeRaps — Mind Over Metrics
-  </footer>
-
-  <script>
-    // tiny convenience: current year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
- 
+const about = {
+ title: "About Me",
+ description:  ` I've learned that leadership isn't always loud. Sometimes, it's a quiet word of encouragement during a tough deadline or being the one who listens 
+ when others feel unseen. I thrive in spaces where collaboration and trust are the norm, not the exception , and I take pride in being the kind of teammate who notices 
+ the details, lifts others up, and helps the whole team move forward together. I love data analysis and I'm driven by the belief that behind every data set is a story 
+ waiting to be understood and I thrive on turning that understanding into real, positive impact.
+        
+export { header, about, projects, skills, education, about };
