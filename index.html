@@ -1,73 +1,75 @@
-const header = {
- homepage: "https://porfolio.simbl.dev",
- title: "JS.",
-};
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mind Over Metrics — Benjamin DeRaps</title>
+<style>
+:root{--bg:#0b0c10;--panel:#111217;--text:#e6e6e6;--muted:#a0a0a0;--accent:#6fb1fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px}
+.card{background:var(--panel);border:1px solid #1f2230;border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+h1{font-size:34px;margin:0 0 8px}h2{font-size:22px;margin:0 0 12px}h3{font-size:18px;margin:0 0 8px}
+.muted{color:var(--muted)}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.row{display:grid;gap:16px}.row.cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.pill{display:inline-block;padding:6px 10px;border:1px solid #2a2d3c;border-radius:999px;margin:4px 6px 0 0;color:#cfd3dc;font-size:13px}
+.btn{display:inline-block;padding:10px 14px;border:1px solid #2a2d3c;border-radius:10px;background:#141623}
+.nav{display:flex;gap:18px;justify-content:flex-end;margin:0 0 18px}.sp{height:24px}
+.hero{display:flex;align-items:center;gap:22px}.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid #2a2d3c}
+.grid{display:grid;gap:16px}.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.footer{margin:32px 0 0;color:#8a8f9d;text-align:center;font-size:14px}
+</style>
+<body><div class="wrap">
+<nav class="nav">
+  <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><span class="sp"></span>
+  <a href="https://github.com/BenDeraps" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+</nav>
 
-const about = {
- name: "Benjamin DeRaps",
- role: "Data Analyst",
- description:
-  "Specializing in React, Next.js, Vue.js, and NestJS, I specialize in turning raw data into strategic decisions through clear analysis, intuitive dashboards, and real-world business context.",
- resume: "/api/resume",
- social: {
-  linkedin: "https://www.linkedin.com/in/benjaminderaps",
-  github: "https://github.com/BenDeraps",
-  email: "ben.c.deraps@gmail.com",
- },
-};
+<section class="card hero">
+  <img class="avatar" src="https://via.placeholder.com/160x160.png?text=BD" alt="Benjamin DeRaps">
+  <div>
+    <h1>Mind Over Metrics</h1>
+    <h3 class="muted">by Benjamin DeRaps — Enter the Data Lab</h3>
+    <p>Data analyst turning messy, real-world data into clear, defensible decisions. Practical dashboards, fast insight loops, no fluff.</p>
+  </div>
+</section>
 
-const projects = [
- {
-  name: "Zomato Customer Segment Analysis",
-  year: "2025",
-  description:
-   "Analyzed customer demographics and restaurant performance using Excel and Tableau to identify high-value customer segments and built dashboards to visualize behavior across multiple filters
-",
-  stack: ["Excel", "Tableau"],
-  liveUrl: "https://public.tableau.com/views/ZomatosCustomerSegmentationAnalysis/SalesbyIncomeEducation?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
- },
- {
-  name: "NYC Airbnb Revenue Analysis",
-  year: "2025",
-  description:
-   "Analyzed Manhattan Airbnb listings using Excel pivot tables and data visualization to identify topperforming neighborhoods and property types, projecting revenue potential exceeding $350K anually for high-demand listings. Delivered strategic recomendations for optimizing vacation rental investments in high-revenue markets",
-  stack: ["Excel"],
-  liveUrl: "https://docs.google.com/spreadsheets/d/1D0biCmo5TYe00wDNYJTio44n-6-x-fQxeUDynDXGd6w/edit?usp=sharing",
- },
- {
-  name: "Superstore Profit Optimization Dashboard",
-  year: "2025",
-  description:
-   "Developed a comprehensive Tableau dashboard analyzing sales, returns, and advertising ROI to identify profit drivers and reduce return losses, providing data-driven recommendations for product discontinuation and targeted advertising strategies. Created interactive visualizations with color-coded performance metrics for executive stakeholder presentations",
-  stack: ["Tableau"],
-  liveUrl: "https://public.tableau.com/views/SuperStoreReturnRateAnalysisDashboardandStory/Story1FinalRecommendations?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-  videoUrl:"https://youtu.be/W40R64_vHiM"
- },
-];
+<section id="projects" class="grid cols-3" style="margin-top:18px">
+  <div class="card">
+    <h2>Superstore Return-Rate Analysis (Tableau)</h2>
+    <p>Identified high-return segments and root causes; built a guided Tableau Story + dashboard to reduce returns and improve margin.</p>
+    <div><span class="pill">Tableau</span><span class="pill">Stories</span><span class="pill">Data Cleaning</span></div>
+    <p style="margin-top:10px"><a class="btn" href="YOUR-TABLEAU-LINK" target="_blank" rel="noopener">Live Demo</a></p>
+  </div>
+  <div class="card">
+    <h2>Airbnb Market Snapshot (Excel)</h2>
+    <p>Excel model for pricing, occupancy, and seasonality; surfaced levers for revenue optimization.</p>
+    <div><span class="pill">Excel</span><span class="pill">Data Viz</span></div>
+    <p style="margin-top:10px"><a class="btn" href="YOUR-EXCEL-LINK" target="_blank" rel="noopener">View Workbook</a></p>
+  </div>
+  <div class="card">
+    <h2>Power BI Sales Dashboard</h2>
+    <p>KPIs, variance, and drilldowns; accelerated weekly reporting and reduced manual prep.</p>
+    <div><span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">Data Modeling</span></div>
+    <p style="margin-top:10px"><a class="btn" href="YOUR-POWERBI-LINK" target="_blank" rel="noopener">Live Report</a></p>
+  </div>
+</section>
 
-const skills = [
- "Excel",
- "Power Query",
- "SQL",
- "Tableau",
- "Power BI",
- "Data Visualization",
- "Data Cleaning",
- "Python"
-];
+<section id="skills" class="card" style="margin-top:18px">
+  <h2>Skills</h2>
+  <div class="row cols-2">
+    <div><h3>Core</h3><div>
+      <span class="pill">Excel</span><span class="pill">Power Query</span><span class="pill">SQL</span><span class="pill">Tableau</span><span class="pill">Power BI</span>
+    </div></div>
+    <div><h3>Focus</h3><div>
+      <span class="pill">Data Cleaning</span><span class="pill">Dashboard Design</span><span class="pill">Storytelling</span>
+    </div></div>
+  </div>
+</section>
 
-const education = [
- {
-  name: "Triple Ten Business Inteligence Analytics Bootcamp",
-  details: " Completed a rigorous data analytics program focused on SQL, excel, tableau, power BI, Python, and data storytelling through real-world projects"
-   { date: "2024 - 2025", }
-];
+<section id="education" class="card" style="margin-top:18px">
+  <h2>Education</h2>
+  <p><strong>TripleTen (Data Analytics)</strong> — rigorous, project-based program focused on real-world problem solving across SQL, Excel, Tableau, and Power BI.</p>
+</section>
 
-const about = {
- title: "About Me",
- description:  ` I've learned that leadership isn't always loud. Sometimes, it's a quiet word of encouragement during a tough deadline or being the one who listens 
- when others feel unseen. I thrive in spaces where collaboration and trust are the norm, not the exception , and I take pride in being the kind of teammate who notices 
- the details, lifts others up, and helps the whole team move forward together. I love data analysis and I'm driven by the belief that behind every data set is a story 
- waiting to be understood and I thrive on turning that understanding into real, positive impact.
-        
-export { header, about, projects, skills, education, about };
+<p class="footer">© Benjamin DeRaps</p>
+</div></body></html>
+
